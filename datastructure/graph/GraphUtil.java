@@ -14,7 +14,11 @@ public class GraphUtil {
         LinkedList<Integer> [] list = new LinkedList[args.length + 1];
         for(String line: args) {
             String [] temp = line.split("=");
-            list[Integer.parseInt(temp[0].trim())] = createListFromString(temp[1].trim());
+            if(temp.length == 2) {
+                list[Integer.parseInt(temp[0].trim())] = createListFromString(temp[1].trim());
+            } else {
+                list[Integer.parseInt(temp[0].trim())] = new LinkedList();
+            }
         }
         return list;
     }

@@ -45,7 +45,6 @@ public class BFSTest {
             "4=1,7, 5",
             "7=4"
         };
-        //execute(GraphUtil.createAdjacencyList(data), 1);
         execute(GraphUtil.createAdjacencyList(data), 7);
     }
 

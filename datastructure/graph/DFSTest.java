@@ -2,6 +2,13 @@ import java.util.*;
 
 public class DFSTest {
 
+    /**
+     * This method runs DFS recursively.
+     * 
+     * @param list adjacency list
+     * @param startVertex  start point
+     * @param visited  visited array
+     */
     public static void executeWithRecursion(LinkedList<Integer> [] list, int startVertex, boolean [] visited) {
         visited[startVertex] = true;
         System.out.println(startVertex);
@@ -12,6 +19,12 @@ public class DFSTest {
         }
     }
 
+    /**
+     * This method runs DFS using a stack, this is not the best DFS
+     * 
+     * @param list adjacency list
+     * @param startVertex   start point
+     */
     public static void executeWithStack(LinkedList<Integer> [] list, int startVertex)  {
         boolean [] visited = new boolean[list.length];
         Stack<Integer> stack = new Stack();
@@ -29,6 +42,12 @@ public class DFSTest {
         }
     }
 
+    /**
+     * Runs DFS using a stack.
+     * 
+     * @param list adjacency list
+     * @param startVertex   start point
+     */
     public static void executeWithStackV1(LinkedList<Integer> [] list, int startVertex) {
         Stack<Integer> stack = new Stack();
         Stack<Iterator<Integer>> itrStack = new Stack();
