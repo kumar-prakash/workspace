@@ -15,17 +15,17 @@ public class Parens {
       result.add(new String(arr));
       return;
     }
-
+    generate(arr, size, n - 1, result);
     int offset = (size - n) + 1;
     int length = arr.length - 1;
-    for(int i = 0 + offset; i < n; i++) {
-      for(int j = 0 + offset; j < n; j++) {
+    for(int i = offset; i < size; i++) {
+      for(int j = offset; j < size; j++) {
         char [] nArr = Arrays.copyOf(arr, arr.length);
         swap(nArr, i, length - j);
         result.add(new String(nArr));
       }
     }
-    generate(arr, size, n - 1, result);
+
   }
 
   public List<String> generateParens(int n) {
@@ -41,6 +41,8 @@ public class Parens {
     Parens p = new Parens();
     //System.out.println(p.generateParens(3));
     //System.out.println(p.generateParens(4));
-    System.out.println(p.generateParens(3));
+    List<String> result = p.generateParens(4);
+    Set<String> col = new HashSet<>(result);
+    System.out.println(col);
   }
 }
